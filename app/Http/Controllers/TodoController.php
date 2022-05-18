@@ -23,4 +23,10 @@ class TodoController extends Controller
         DB::table('todos')->insert($param);
         return redirect('/');
     }
+
+    public function detail(Request $request, $id)
+    {
+        $item = DB::table('todos')->where('id', $id)->first();
+        return view('todo.detail', ['id' => $id], ['item' => $item]);
+    }
 }

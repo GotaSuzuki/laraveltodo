@@ -12,9 +12,7 @@
 <body>
     @foreach($items as $item)
     <tr>
-        <td id="a">{{$item->id}}</td>
-        <td>{{$item->title}}</td>
-        <td>{{$item->txt}}</td>
+        <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}">{{$item->title}}</a></td>
         <br>
         <hr>
     </tr>
