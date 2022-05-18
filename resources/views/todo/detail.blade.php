@@ -11,6 +11,7 @@
 <body>
     <td>{{$item -> title}}</td>
     <td>{{$item -> txt}}</td>
+    <td><a href="{{ action('App\Http\Controllers\TodoController@index') }}">戻る</a></td>
 </body>
 
 </html>
