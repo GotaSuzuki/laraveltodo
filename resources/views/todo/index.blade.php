@@ -13,8 +13,9 @@
     @foreach($items as $item)
     <tr>
         <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
-        <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}">削除する</a></td>
-        <td><a href="{{ action('App\Http\Controllers\TodoController@update', $item->id) }}">編集する</a></td>
+        <br>
+        <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
+        <td><a href="{{ action('App\Http\Controllers\TodoController@update', $item->id) }}" id="update">編集する</a></td>
         <br>
         <hr>
     </tr>
