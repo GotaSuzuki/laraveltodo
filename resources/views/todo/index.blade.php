@@ -13,6 +13,7 @@
     @foreach($items as $item)
     <tr>
         <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
+        <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}">削除する</a></td>
         <br>
         <hr>
     </tr>

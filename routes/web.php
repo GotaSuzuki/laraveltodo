@@ -18,3 +18,5 @@ use App\Http\Controllers\TodoController;
 Route::get('/', 'App\Http\Controllers\TodoController@index');
 Route::post('/', 'App\Http\Controllers\TodoController@create');
 Route::get('/detail/{id}', 'App\Http\Controllers\TodoController@detail')->name('detail');
+Route::get('/delete/{id}', 'App\Http\Controllers\TodoController@delete');
+Route::post('/delete/{id}', 'App\Http\Controllers\TodoController@remove');

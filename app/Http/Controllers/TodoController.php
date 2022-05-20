@@ -29,4 +29,16 @@ class TodoController extends Controller
         $item = DB::table('todos')->where('id', $id)->first();
         return view('todo.detail', ['id' => $id], ['item' => $item]);
     }
+
+    public function delete(Request $request)
+    {
+        $item = DB::table('todos')->where('id', $request->id)->first();
+        return view('todo.delete',  ['form' => $item]);
+    }
+
+    public function remove(Request $request)
+    {
+        DB::table('todos')->where('id', $request->id)->delete();
+        return redirect('/');
+    }
 }
