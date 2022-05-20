@@ -16,11 +16,12 @@
     </article>
 
     <table>
-        <form action="/" method="POST">
+        <form action="/update" method="POST">
             @csrf
-            <input type="text" name="title" size="30" placeholder="タイトル"><br>
-            <textarea name="txt" cols="30" rows="10" placeholder="テキスト"></textarea><br>
-            <button type="submit">登録する</button>
+            <input type="hidden" name="id" value="{{$form->id}}">
+            <input type="text" name="title" value="{{$form->title}}" size="30" placeholder="タイトル"><br>
+            <textarea name="txt" value="{{$form->txt}}" cols="30" rows="10" placeholder="テキスト"></textarea><br>
+            <input type="submit" value="編集する">
         </form>
     </table>
 

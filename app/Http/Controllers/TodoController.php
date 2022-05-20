@@ -45,13 +45,12 @@ class TodoController extends Controller
     public function edit(Request $request)
     {
         $item = DB::table('todos')->where('id', $request->id)->first();
-        return view('todo.update', ['form' => $item], ['item' => $item]);
+        return view('todo.edit', ['form' => $item], ['item' => $item]);
     }
 
     public function update(Request $request)
     {
         $param = [
-            'id' => $request->id,
             'title' => $request->title,
             'txt' => $request->txt,
         ];

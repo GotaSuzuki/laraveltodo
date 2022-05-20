@@ -26,7 +26,7 @@
                     <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
                 </div>
                 <div class="col">
-                    <td><a href="{{ action('App\Http\Controllers\TodoController@update', $item->id) }}" id="update">編集する</a></td>
+                    <td><a href="{{ action('App\Http\Controllers\TodoController@edit', $item->id) }}" id="edit">編集する</a></td>
                 </div>
             </tr>
             <hr><br>

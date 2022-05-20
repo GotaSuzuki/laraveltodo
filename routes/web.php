@@ -20,5 +20,5 @@ Route::post('/', 'App\Http\Controllers\TodoController@create');
 Route::get('/detail/{id}', 'App\Http\Controllers\TodoController@detail')->name('detail');
 Route::get('/delete/{id}', 'App\Http\Controllers\TodoController@delete');
 Route::post('/delete/{id}', 'App\Http\Controllers\TodoController@remove');
-Route::get('/update/{id}', 'App\Http\Controllers\TodoController@edit');
-Route::post('/update/{id}', 'App\Http\Controllers\TodoController@update');
+Route::get('/edit/{id}', 'App\Http\Controllers\TodoController@edit');
+Route::post('/edit/{id}', 'App\Http\Controllers\TodoController@update');
