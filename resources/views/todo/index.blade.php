@@ -13,36 +13,45 @@
 
 <body>
     <div class="container">
-        <div class="row align-items-start">
-            @foreach($items as $item)
-            <tr>
-                <div class="col">
-                    <input type="checkbox" name="check" id="">
+        <div class="row">
+            <div class="col col1">
+                <div class="create_container">
+                    <p>Create Todo</p>
+                    <table>
+                        <form action="/" method="POST">
+                            @csrf
+                            <input type="text" name="title" size="30" placeholder="タイトル"><br>
+                            <input type="text" name="txt" size="30" placeholder="テキスト"><br>
+                            <button id="create_button" type="submit">登録</button>
+                        </form>
+                    </table>
                 </div>
-                <div class="col">
-                    <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
+            </div>
+            <div class="col col2">
+                <div class="d-grid gap-3">
+                    <div class="p-2">@foreach($items as $item)
+                        <tr>
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <input type="checkbox" name="check" id="">
+                                </div>
+                                <div class="col">
+                                    <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
+                                </div>
+                                <div class="col">
+                                    <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
+                                </div>
+                                <div class="col">
+                                    <td><a href="{{ action('App\Http\Controllers\TodoController@edit', $item->id) }}" id="edit">編集する</a></td>
+                                </div>
+                            </div>
+                        </tr>
+                        <br>
+                        @endforeach</div>
                 </div>
-                <div class="col">
-                    <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
-                </div>
-                <div class="col">
-                    <td><a href="{{ action('App\Http\Controllers\TodoController@edit', $item->id) }}" id="edit">編集する</a></td>
-                </div>
-            </tr>
-            <hr><br>
-            @endforeach
-
+            </div>
         </div>
     </div>
-
-    <table>
-        <form action="/" method="POST">
-            @csrf
-            <input type="text" name="title" size="30" placeholder="タイトル"><br>
-            <textarea name="txt" cols="30" rows="10" placeholder="テキスト"></textarea><br>
-            <button type="submit">登録する</button>
-        </form>
-    </table>
 </body>
 
 </html>

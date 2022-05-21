@@ -4,7 +4,7 @@ body{
 }
 
 #title{
-    color: orange;
+    color: white;
 }
 
 #line{
@@ -12,13 +12,61 @@ body{
 }
 
 #delete{
-    color: red;
+    color: white;
 }
 
-#update{
-    color: green;
+#edit{
+    color: white;
 }
 
 #detail{
     color: orchid;
+}
+
+.col1{
+    padding-top: 130px;
+    margin-left: 100px;
+}
+
+.create_container{
+    padding: 100px 0px;
+    height: 550px;
+    width: 400px;
+    border: solid 1px gray;
+    border-radius: 10px;
+}
+
+.create_container p{
+    font-size: 35px;
+}
+
+.create_container input{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    background: transparent;
+    padding-top: 60px;
+}
+
+.create_container textarea{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    background: transparent;
+}
+
+#create_button{
+    color: white;
+    margin-top: 120px;
+    background-color: green;
+    height: 40px;
+    width: 100px;
+}
+
+.col2{
+    padding-top: 200px;
+}
+
+.align-items-center{
+    background-color: green;
 }
