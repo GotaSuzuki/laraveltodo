@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use App\Task;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $items = DB::select('select * from todos order by id desc');
+        $items = DB::select('select * from todos');
         return view('todo.index', ['items' => $items]);
     }
 
