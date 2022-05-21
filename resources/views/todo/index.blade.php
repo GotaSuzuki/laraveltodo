@@ -12,7 +12,9 @@
 </head>
 
 <body>
+    <header></header>
     <div class="container">
+        <p id="TodoList">TodoList</p>
         <div class="row">
             <div class="col col1">
                 <div class="create_container">
@@ -29,29 +31,33 @@
             </div>
             <div class="col col2">
                 <div class="d-grid gap-3">
-                    <div class="p-2">@foreach($items as $item)
-                        <tr>
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <input type="checkbox" name="check" id="">
+                    <div class="list_container">
+                        <div class="p-2">@foreach($items as $item)
+                            <tr>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <input type="checkbox" name="check" id="">
+                                    </div>
+                                    <div class="col">
+                                        <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
+                                    </div>
+                                    <div class="col">
+                                        <td><a href="{{ action('App\Http\Controllers\TodoController@edit', $item->id) }}" id="edit">編集する</a></td>
+                                    </div>
+                                    <div class="col">
+                                        <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <td><a href="{{ action('App\Http\Controllers\TodoController@detail', $item->id) }}" id='title'>{{$item->title}}</a></td>
-                                </div>
-                                <div class="col">
-                                    <td><a href="{{ action('App\Http\Controllers\TodoController@delete', $item->id) }}" id="delete">削除する</a></td>
-                                </div>
-                                <div class="col">
-                                    <td><a href="{{ action('App\Http\Controllers\TodoController@edit', $item->id) }}" id="edit">編集する</a></td>
-                                </div>
-                            </div>
-                        </tr>
-                        <br>
-                        @endforeach</div>
+                            </tr>
+                            <br>
+                            @endforeach</div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <footer></footer>
 </body>
 
 </html>
