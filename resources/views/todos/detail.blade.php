@@ -10,10 +10,15 @@
 </head>
 
 <body>
+    <header></header>
     <article>
-        <p>{{$item -> title}}</p>
-        <p>{{$item -> txt}}</p>
-        <p><a href="{{ action('App\Http\Controllers\TodoController@index') }}">戻る</a></p>
+        <div class="todo_detail">
+            <table>
+                <p class="title">{{$item -> title}}</p>
+                <p>{{$item -> txt}}</p>
+                <p><a href="{{ action('App\Http\Controllers\TodosController@index') }}">戻る</a></p>
+            </table>
+        </div>
     </article>
 </body>
 
