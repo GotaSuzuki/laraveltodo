@@ -15,13 +15,13 @@
     <header></header>
     <div class="container">
         <div class="log">@if(Auth::check())
-            <p>USER:{{Auth::user()->name}}</p>
+            <p id="TodoList">{{Auth::user()->name . 'の' . 'TodoList'}}</p>
             @else
             <p>*ログインしていません。(<a href="/login">ログイン</a>)</p>
             <p><a href="/register">登録</a></p>
+            <p id="TodoList">TodoList</p>
             @endif
         </div>
-        <p id="TodoList">TodoList</p>
         <div class="row">
             <div class="col col1">
                 <div class="create_container">

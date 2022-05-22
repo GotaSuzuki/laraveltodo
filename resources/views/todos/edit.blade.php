@@ -22,7 +22,7 @@
                                 @csrf
                                 <input type="hidden" name="id" value="{{$form->id}}">
                                 <input type="text" name="title" size="30" placeholder="タイトル" value="{{$form->title}}"><br>
-                                <input type="text" name="txt" size="30" placeholder="テキスト" value="{{$form->txt}}"><br>
+                                <input type="text" name="txt" size="30" placeholder="テキスト"><br>
                                 <button id="create_button" type="submit">再登録</button>
                             </div>
                         </form>
