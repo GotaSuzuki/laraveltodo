@@ -14,6 +14,13 @@
 <body>
     <header></header>
     <div class="container">
+        <div class="log">@if(Auth::check())
+            <p>USER:{{Auth::user()->name}}</p>
+            @else
+            <p>*ログインしていません。(<a href="/login">ログイン</a>)</p>
+            <p><a href="/register">登録</a></p>
+            @endif
+        </div>
         <p id="TodoList">TodoList</p>
         <div class="row">
             <div class="col col1">

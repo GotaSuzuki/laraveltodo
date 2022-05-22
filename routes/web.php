@@ -22,3 +22,7 @@ Route::get('/delete/{id}', 'App\Http\Controllers\TodosController@delete');
 Route::post('/delete/{id}', 'App\Http\Controllers\TodosController@remove');
 Route::get('/edit/{id}', 'App\Http\Controllers\TodosController@edit');
 Route::post('/edit/{id}', 'App\Http\Controllers\TodosController@update');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
